@@ -21,7 +21,7 @@ class PageJsonController extends ControllerBase {
   protected $configFactory;
 
   /**
-   * Constructor for the class NodeJSONController to inject dependency.
+   * Constructor for the class PageJsonController to inject dependency.
    *
    * @param Drupal\Core\Entity\EntityTypeManagerInterface $entityType
    *   The action storage.
