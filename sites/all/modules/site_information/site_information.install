@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Uninstall and Enable hook for the node_expose_json module.
+ */
+
+use \Drupal\Core\Url;
+
+/**
+ * Implements hook_install().
+ */
+function site_information_install() {
+  // Set up the link.
+  $pass_link = \Drupal::l(t('Basic site settings'), Url::fromRoute('system.site_information_settings'));
+  // In drupal_set_message.
+  drupal_set_message(t("Configure the Site API Key in the following link @link",
+  array('@link' => $pass_link)));
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function site_information_uninstall() {
+  // Delete remaining general module variables.
+  Drupal::configFactory()->getEditable('site_information.site')->delete();
+}
