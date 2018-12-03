@@ -1,0 +1,60 @@
+first_module.content:
+  path: '/first'
+  defaults:
+    _controller: 'Drupal\first_module\Controller\FirstController::content'
+    _title: 'Hello world'
+  requirements:
+    _permission: 'access content'
+first_module.form:
+  path: '/firstform'
+  defaults:
+    _form: 'Drupal\first_module\Form\FirstForm'
+    _title: 'Hello Form'
+  requirements:
+    _permission: 'access content'
+first_module.admin_settings:
+  path: '/admin/config/first_module'
+  defaults:
+    _form: 'Drupal\first_module\Form\FirstConfigurationForm'
+    _title: 'first module configuration screen'
+  requirements:
+    _permission: 'administer site configuration'
+first_module.ncreate:
+  path: '/ncreate'
+  defaults:
+    _controller: 'Drupal\first_module\Controller\FirstController::content_lod'
+    _title: 'first node create'
+  requirements:
+    _permission: 'access content'
+first_module.nupdate:
+  path: '/nupdate'
+  defaults:
+    _controller: 'Drupal\first_module\Controller\FirstController::nupdate'
+    _title: 'first update create'
+  requirements:
+    _permission: 'access content'
+first_module.nunpublish:
+  path: '/nunpublish'
+  defaults:
+    _controller: 'Drupal\first_module\Controller\FirstController::nunpublish'
+    _title: 'first update create'
+  requirements:
+    _permission: 'access content'
+first_module.create_user:
+  path: '/cuser'
+  defaults:
+    _controller: 'Drupal\first_module\Controller\FirstController::create_new_user'
+    _title: 'first update create'
+  requirements:
+    _permission: 'access content'
+first_module.mymenu:
+  path: '/upcast/{my_menu}/mytab'
+  defaults:
+    _title: 'My Title'
+    _controller: 'Drupal\first_module\Controller\FirstController::upcasting_lod'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      my_menu:
+        type: my_menu

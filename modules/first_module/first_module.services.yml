@@ -1,0 +1,10 @@
+services:
+  first_module.old_nodes:
+    class: \Drupal\first_module\OldNodesService
+    arguments: ["@entity_type.manager"]
+  first_module.say_hello:
+    class: Drupal\first_module\HelloServices
+  my_menu:
+    class: Drupal\first_module\ParamConverter\MyModuleParamConverter
+    tags:
+      - { name: paramconverter }

@@ -1,0 +1,7 @@
+firstmodule-js:
+  version: 1.x
+  js:
+    js/first_module.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

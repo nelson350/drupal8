@@ -1,0 +1,35 @@
+<?php
+use Drupal\Core\Form\FormStateInterface;
+function first_module_cron(){
+//unpublish node via services: check
+/**$old_nodes = \Drupal::service('first_module.old_nodes')->load();
+  print_r($old_nodes);exit;
+  foreach ($old_nodes as $node) {
+    $node->setPublished(false);
+    $node->save();
+  }**/
+}
+
+
+/**
+ * Implements hook_form_alter().
+ */
+function first_module_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+	//print_r($form_id);exit;
+  if ($form_id == 'firstmodule_form') {
+    $form['actions']['submit']['#value'] = t('Add custom value');
+	  $form['terms'] = array(
+    '#type' => 'checkbox',
+    '#title' => t("I accept the website's terms."),
+    '#required' => TRUE,
+  );
+  }
+}
+/**
+function first_module_preprocess_html(&$variables) {
+  $lotus_height = ‘300px’;
+
+  //Add a JS library
+ // $variables['#attached']['library'][] = 'first_module/firstmodule-js';
+  //$variables['#attached']['drupalSettings']['lotus']['lotusJS']['lotus_height'] = $lotus_height;
+}**/
